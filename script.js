@@ -7,6 +7,9 @@ const gameBoard = (() => {
       let divContent = document.createTextNode(`${i}`);
       newDiv.id = i;
       newDiv.className = 'gameBoard';
+      newDiv.addEventListener('click', function() {
+        gamePlay.markSquare(i);
+      });
       newDiv.appendChild(divContent);
       toAdd.appendChild(newDiv);
     }
@@ -16,10 +19,14 @@ const gameBoard = (() => {
   return initalizeBoard();
 })();
 
-const Player = (sign) => {
-  let _sign = sign;
-  const getSign = () => _sign;
-  const setSign = (sign, active) => {
-    _sign = sign;
-  }
+const Player = () => {
+  
 };
+
+const gamePlay = (() => {
+  const markSquare = i => {
+    console.log(i)
+  };
+
+  return {markSquare};
+})();
