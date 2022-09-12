@@ -1,0 +1,15 @@
+#gameBoardContainer {
+    display: grid;
+    justify-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
+}
+
+.cell {
+    color: red;
+    background-color: bisque;
+    cursor:pointer;
+    padding: 75px;
+    margin: 0;
+}
