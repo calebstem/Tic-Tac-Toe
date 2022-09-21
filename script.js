@@ -1,11 +1,16 @@
-function gameBoard(arrPos, pawn) {
-    let gameBoard = {
-        board: ['','','','','','','','','']
-    }
+const gameBoard = {
+    board: ['','','','','','','','',''],
+} 
 
-    gameBoard.board.splice(arrPos, 1, pawn);
+function gameBoardController(arrPos, pawn) {
+    function gameBoardAdd(arrPos, pawn) {
+        gameBoard.board[arrPos] = pawn;
+        console.table(gameBoard.board);
+    }
     
-    console.table(gameBoard.board);
+    gameBoardAdd(arrPos, pawn);
+    
+    return gameBoard.board;
 }
 
 function displayController() {
@@ -16,14 +21,13 @@ function displayController() {
         div.innerHTML = i;
         div.setAttribute('class', 'cell');
         div.setAttribute('id', i);
-        div.addEventListener("click",
-            function() {markCell(i)});
+        div.addEventListener("click",  //on click change value of cell
+            function() {markCell(i)}); //i = position in gameboard array
         document.getElementById("gameBoardContainer").appendChild(div);
     }
 
     function markCell(id) {
-//        document.getElementById(id).innerHTML = id;
-        gameBoard(id, 'X');
+        gameBoardController(id, 'x');
     }
 
 }
