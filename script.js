@@ -1,23 +1,26 @@
 const gameBoard = {
     board: ['','','','','','','','',''],
+    turnCount: 0,
 } 
 
 function gameBoardController(arrPos, pawn) {
-    function gameBoardAdd(arrPos, pawn) {
-        gameBoard.board[arrPos] = pawn;
-        console.table(gameBoard.board);
+    function gameBoardAdd(arrPos, pawn) { // logic for placing pawns
+        gameBoard.board[arrPos] = pawn; //
+        document.getElementById(arrPos).innerHTML = pawn;
+        gameBoard.turnCount++;
+        console.log(gameBoard.turnCount);
     }
     
+
+
     gameBoardAdd(arrPos, pawn);
     
     return gameBoard.board;
 }
 
 function displayController() {
-//    gameBoard = gameBoard();
     for (let i = 0; i < 9; i++){ //draws gameboard
-        let div = document.createElement('a');
-//        div.innerHTML = gameBoard[i];
+        let div = document.createElement('a'); //each cell is clickable button
         div.innerHTML = i;
         div.setAttribute('class', 'cell');
         div.setAttribute('id', i);
@@ -37,3 +40,5 @@ function createPlayer(pawn) {
         pawn: pawn,
     };
 }
+
+displayController();
