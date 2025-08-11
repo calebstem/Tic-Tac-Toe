@@ -4,12 +4,59 @@
     justify-content: center;
     grid-template-columns: repeat(3, auto);
     grid-template-rows: repeat(3, auto);
+    gap: 5px;
+    margin: 20px auto;
+    max-width: 500px;
 }
 
 .cell {
-    color: red;
-    background-color: bisque;
-    cursor:pointer;
-    padding: 75px;
+    color: #333;
+    background-color: #f0f0f0;
+    border: 2px solid #ccc;
+    cursor: pointer;
+    padding: 50px;
     margin: 0;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    min-width: 60px;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+.cell:hover {
+    background-color: #e0e0e0;
+}
+
+.cell.x {
+    color: #e74c3c;
+}
+
+.cell.o {
+    color: #3498db;
+}
+
+#gameInfo {
+    text-align: center;
+    margin: 20px;
+    font-size: 1.2em;
+    font-family: Arial, sans-serif;
+}
+
+#resetButton {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+#resetButton:hover {
+    background-color: #27ae60;
 }
